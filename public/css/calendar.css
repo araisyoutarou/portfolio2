@@ -1,0 +1,527 @@
+body {
+  position: relative;
+}
+
+body.no_scroll{
+   overflow: hidden;
+}
+
+main {
+  min-height: calc(100vh - 100px);
+  padding-bottom: 30px;
+}
+
+.day-blank {
+	background-color: #efefef;
+}
+.day-blank > a {
+	display: none;
+}
+.day-sun .day{
+	color:red;
+}
+.day-sat .day{
+	color: blue;
+}
+.calendar table td {	
+	padding: 3px;
+	border: solid 1px #999;
+	width: 14%;
+	height: 73px;
+}
+.calendar table td:before {
+	display: block;
+	float: left;
+	height: 50px;
+	content: "";
+}
+.calendar table td .day {
+	margin-bottom: 0;
+}
+.calendar table th {
+	text-align: center;
+	border: solid 1px #999;
+}
+
+.sunday {
+	color: red;
+}
+
+.saturday {
+	color: blue;
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.years {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.button {
+	text-align: center;
+}
+
+.memo {
+	display: flex;
+}
+
+.block {
+	margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.total {
+	margin-left: 10% ;
+    display: flex;
+}
+
+.textarea {
+	width: 350%;
+	margin-left: 30%;
+}
+
+.history {
+	margin-left: 100% ;
+	width: 100%;
+}
+
+.back_button {
+	height: 30px;
+	position: relative;
+	bottom: 120px;
+}
+
+.update_button {
+	position: relative;
+	top: 20px;
+}
+
+.hoge {
+	visibility:hidden;
+}
+
+.sumPrice {
+	color: blue;
+	line-height: 1;
+}
+
+.sumIncome {
+	color: red;
+	line-height: 0.01;
+}
+
+.date{
+    margin:1em 0;
+    position: relative;
+    padding: 0.25em 1em;
+    border: solid 2px #4ec4d3;
+    border-radius: 3px 0 3px 0;
+    font-family: serif;
+}
+.date:before,.date:after
+{
+    content: '';
+    position: absolute;
+    width:10px;
+    height: 10px;
+    border: solid 2px #4ec4d3;
+    border-radius: 50%;
+}
+.date:after {
+    top:-12px;
+    left:-12px;
+}
+.date:before {
+    bottom:-12px;
+    right:-12px;
+}
+
+.pricePlus {
+	margin-top: 8px;
+	padding-top: 3px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.prices{
+	margin-top: 8px;
+    position: relative;
+    padding: 0.1em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.prices:before, .prices:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.prices:before {left: 10px;}
+.prices:after {right: 10px;}
+
+.chart_prices{
+    position: relative;
+    padding: 0.1em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.chart_prices:before, .chart_prices:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.chart_prices:before {left: 10px;}
+.chart_prices:after {right: 10px;}
+
+.submit {
+	position: relative;
+	left: 85px;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+.ud-submit {
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+.allChart {
+	width: 56%;
+	height: 50%;
+	margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+}
+
+.message {
+	position: relative;
+	top: 300px;
+}
+
+.chartTotal {
+	flex-direction: row;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	margin-right: 20%;
+	margin-left: 20%;
+	margin-top: 10px;
+}
+
+.color {
+	display: flex;
+	float: right;
+}
+
+.blue {
+	color: blue;
+	margin-right: 5px;
+}
+
+.red {
+	color: red;
+}
+
+footer {
+	width: 100%;
+	height: 120px;
+	padding-top: 30px;
+	background-color: #C0C0C0;
+	font-size: 10px;
+}
+
+.footer-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+	gap: 20px;
+}
+
+.scroll_txt {
+	visibility: hidden;
+	margin: 0px;
+}
+
+.footer-container {
+  display: grid;
+  justify-items: center;
+}
+
+.history_table {
+    border: double 5px #4ec4d3;
+}
+
+.history_table td{
+	padding:5px;
+}
+
+.but {
+	margin-top: 10px;
+}
+
+.move {
+	position: relative;
+	left: 10px;
+}
+
+.input_text {
+	line-height: 0;
+}
+
+textarea {
+	resize: none;
+}
+
+.modal_window {
+	width: 500px;
+}
+
+/*モーダル本体の指定 + モーダル外側の背景の指定*/
+.modal-container{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: rgba(0,0,0,50%);
+	padding: 40px 20px;
+	overflow: auto;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+    box-sizing: border-box;
+}
+/*モーダル本体の擬似要素の指定*/
+.modal-container:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+/*モーダル本体に「active」クラス付与した時のスタイル*/
+.modal-container.active{
+	opacity: 1;
+	visibility: visible;
+}
+/*モーダル枠の指定*/
+.modal-body{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	margin-left: 150px;
+}
+/*モーダルを閉じるボタンの指定*/
+.modal-close{
+	position: absolute;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	top: -40px;
+	left: 600px;
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+	color: #fff;
+	cursor: pointer;
+}
+/*モーダル内のコンテンツの指定*/
+.modal-content{
+	background: #fff;
+	text-align: left;
+	padding: 30px;
+	width: 550px;
+}
+
+.modal_th {
+	width: 90px;
+	padding-bottom: 16px;
+	border: solid 2px #4ec4d3;
+}
+
+.modal_tr {
+	border: solid 2px #4ec4d3;
+}
+
+@media screen and (max-width:1200px) {
+	.title {
+		text-align: center;
+		width: 100%;
+	}
+	
+	.calendar_create {
+		width: 100%;
+	}
+	
+	.color {
+		font-size: 12px;
+    	margin-top: 3px;
+	}
+
+	.sumPrice {
+		font-size: 1px;
+		line-height: 1;
+	}
+	
+	.sumIncome {
+		font-size: 1px;
+		line-height: 1.1;
+	}
+	
+	.block {
+		flex-direction: column;
+	}
+	
+	.textarea {
+		box-sizing: content-box;
+		display: block;
+		width: 100%;
+		margin-left: 0%;
+	}
+	
+	.history {
+		margin-top: 10px;
+		margin-left: 0% ;
+		width: 100%;
+		padding: 15px;
+	}
+	
+	.scroll {
+		overflow-x: scroll;
+	}
+	
+	.pricePlus {
+    	width: 50%;
+    	padding-right: 0px;
+    	padding-left: 0px;
+	}
+	
+	.prices {
+		width: 50%;
+		height: 50%;
+	}
+	
+	.but {
+		display: flex;
+	}
+	
+	.submit {
+		left: 10px;
+	}
+	
+	.chartTotal {
+    	margin-right: 0;
+    	margin-left: 0;
+	}
+	
+	.allChart {
+		box-sizing: border-box;
+		height: 375px;
+		width: 375px;
+	}
+	
+	footer {
+		text-align: center;
+	}
+	
+	.footer-menu {
+		width: 60%;
+		margin: 0 auto;
+		
+	}
+	
+	.col-md-10 {
+		max-width: 100%;
+	}
+	
+	.move {
+		margin-right: 50%;
+	}
+	
+	.modal-body{
+		padding: 0;
+	}
+	
+	.modal-content{
+		width: 320px;
+	}
+	
+	.modal_window {
+		width: 260px;
+	}
+	
+	.modal-close{
+		left: 310px;
+	}
+	
+	.input_text {
+		width: 100px;
+	}
+	
+	.history_table td{
+		padding-bottom: 1px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+}
+
+@media screen and (max-width:630px) {
+	
+	.scroll_txt {
+		visibility: visible;
+	}
+	
+	.total {
+		margin-right: 50px;
+		margin-left: 20px;
+	}
+	
+	.prices {
+		margin-right: 0%;
+	}
+	
+	.move {
+		margin-right: 0%;
+	}
+	
+	.modal-body {
+		margin-left: 0px;
+	}
+	
+	.modal-container {
+		text-align: left;
+	}
+	
+	.modal-content {
+		width: 320px;
+	}
+	
+	.modal-close{
+		left: 310px;
+	}
+	
+	.modal_td {
+		width: 200px;
+	}
+	
+	.history_table td{
+		padding-top: 5px;
+		padding-bottom: 4px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+}
